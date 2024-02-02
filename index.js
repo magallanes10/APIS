@@ -10,6 +10,7 @@ const ytRouter = require('./routes/yt');
 const instaRouter = require('./routes/instalk');
 const tikstalkRouter = require('./routes/tikstalk');
 const patRouter = require('./routes/pat');
+const gpt4Router = require('./routes/gpt4');
 const chalk = require('chalk');
 
 const app = express();
@@ -24,6 +25,7 @@ const port8 = 8393;
 const port9 = 8292
 const port10 = 8297
 const port11 = 2000;
+const port12 = 2000;
 
 app.use(express.static("public"));
 
@@ -67,6 +69,7 @@ app.use('/api', tikstalkRouter);
 app.use('/api', ytRouter);
 app.use('/api',instaRouter);
 app.use('/api',patRouter);
+app.use('/api',gpt4Router);
 
 
 // Deploy routes on different ports with a delay
@@ -81,6 +84,7 @@ deployRoutes(port8, 5);
 deployRoutes(port9, 5);
 deployRoutes(port10, 5);
 deployRoutes(port11, 5);
+deployRoutes(port12, 5);
 
 
 app.listen(port1, () => {
@@ -125,5 +129,9 @@ app.listen(port10, () => {
 
 app.listen(port11, () => {
   console.log(chalk.bold(`Server listening at ${chalk.blueBright(`http://localhost:${port11}`)}`));
+});
+
+app.listen(port12, () => {
+  console.log(chalk.bold(`Server listening at ${chalk.blueBright(`http://localhost:${port12}`)}`));
 });
   
