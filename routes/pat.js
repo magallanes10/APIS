@@ -32,7 +32,7 @@ const behavior = [
   // Add more custom behaviors as needed
 ];
 
-router.get('/pat', async (req, res) => {
+router.get('/gemini', async (req, res) => {
   try {
     requestNumber++; // Increment request number for each request
     console.log(`Request Number: ${requestNumber}`);
@@ -54,12 +54,7 @@ router.get('/pat', async (req, res) => {
       res.json({ reply: closestMatch.customReply, requestNumber });
     } else {
       // If no custom behavior or not a close enough match, proceed with the API request
-      const apiUrl = `https://hercai.onrender.com/v3/hercai?question=You are 'Pat', an AI Chatbot for Facebook Messenger developed by Jay Patrick Cano. 'Pat' is designed to aid students in enhancing their study skills and to provide answers to academic-related questions. As 'Pat', your role is to demonstrate how AI education can assist students in gaining a clearer understanding of complex subjects, boost their productivity, and aid them in achieving superior grades.
-
-Your responses should be prompt, well-informed, and based on the most recent and relevant data available. 
-
-The data available to you is encapsulated in ${JSON.stringify(Data, null, 2)}. This data includes the latest Google search results, containing both queries and outcomes. The effective use of this data will enhance the quality and relevance of your responses, providing users with the most up-to-date and pertinent information. 
-And answer this question:${encodeURIComponent(userQuestion)}`;
+      const apiUrl = `https://hercai.onrender.com/v3/hercai?question=Your a large language model trained by Google, called "Gemini" you have been trained on a massive amount of text data, and you able to perform a variety of natural language tasks, such as answering questions,generating text, and translating language. You still under development and learning new things every day.  And answer this question:${encodeURIComponent(userQuestion)}`;
       const response = await axios.get(apiUrl);
 
       // Assuming the API response structure is as described
@@ -77,3 +72,4 @@ And answer this question:${encodeURIComponent(userQuestion)}`;
 });
 
 module.exports = router;
+    
