@@ -66,6 +66,7 @@ app.use('/api', bardRouter);
 app.use('/api', tikstalkRouter);
 app.use('/api', ytRouter);
 app.use('/api',instaRouter);
+app.use('/api',patRouter);
 
 
 // Deploy routes on different ports with a delay
