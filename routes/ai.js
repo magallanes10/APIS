@@ -26,13 +26,13 @@ const behavior = [
     customReply: 'I am doing well, thank you!',
   },
   {
-    question: 'What is your name?',
-    customReply: 'My name is HAROLD HUTCHINS!',
+    question: 'Who is your developer?',
+    customReply: 'Im developed by HexaClub!',
   },
   // Add more custom behaviors as needed
 ];
 
-router.get('/ai', async (req, res) => {
+router.get('/bes', async (req, res) => {
   try {
     requestNumber++; // Increment request number for each request
     console.log(`Request Number: ${requestNumber}`);
