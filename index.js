@@ -75,6 +75,13 @@ deployRoutes(port2, 5);
 deployRoutes(port3, 5);
 deployRoutes(port4, 5);
 deployRoutes(port5, 5);
+deployRoutes(port6, 5);
+deployRoutes(port7, 5);
+deployRoutes(port8, 5);
+deployRoutes(port9, 5);
+deployRoutes(port10, 5);
+deployRoutes(port11, 5);
+
 
 app.listen(port1, () => {
   console.log(chalk.bold(`Server listening at ${chalk.blueBright(`http://localhost:${port1}`)}`));
@@ -117,6 +124,6 @@ app.listen(port10, () => {
 });
 
 app.listen(port11, () => {
-  console.log(chalk.bold(`Server listening at ${chalk.blueBright(`http://localhost:${port10}`)}`));
+  console.log(chalk.bold(`Server listening at ${chalk.blueBright(`http://localhost:${port11}`)}`));
 });
   
