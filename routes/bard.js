@@ -8,7 +8,7 @@ router.get('/bard', async (req, res) => {
     const assistant = new BardAPI();
 
     // Set session information for authentication
-    await assistant.setSession('__Secure-1PSID', 'fwgeLOxYZcYLBCPmXl1SghPrAGL8CY_VmuSIPG7eYikMYwNKNKhgqxIz4upnkP70Fp1hpA.'); // or '__Secure-3PSID'
+    await assistant.setSession('__Secure-1PSID', 'fgjRMpazo2iFm0apz6KjhDnTU3Y6xYDEXfQ12AT6GzRYm4gP0Qflf-HkUqGt1pk-Se4Tlw.'); // or '__Secure-3PSID'
     // ...
 
     // Extract the query from the query parameters
