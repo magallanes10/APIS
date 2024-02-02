@@ -25,7 +25,7 @@ const port8 = 8393;
 const port9 = 8292
 const port10 = 8297
 const port11 = 2000;
-const port12 = 2000;
+const port12 = 3389;
 
 app.use(express.static("public"));
 
