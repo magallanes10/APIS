@@ -3,7 +3,7 @@ const editRouter = require("./routes/edit");
 const tinyurlRouter = require('./routes/tinyurl');
 const tiktokRouter = require('./routes/tiktok');
 const hercaiRouter = require('./routes/ai');
-const patRouter = require('./routes/pat');
+const hercaiRouter = require('./routes/pat');
 const facebookRoute = require('./routes/fbdl');
 const bardRouter = require('./routes/bard');
 const ytRouter = require('./routes/yt');
@@ -20,7 +20,7 @@ const port5 = 3920;
 const port6 = 3739;
 const port7 = 3333;
 const port8 = 8393;
-const port9 = 8292;
+const port9 = 8292
 const port10 = 8297
 const port11 = 2000
 
