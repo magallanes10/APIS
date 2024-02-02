@@ -54,7 +54,7 @@ router.get('/bes', async (req, res) => {
       res.json({ reply: closestMatch.customReply, requestNumber });
     } else {
       // If no custom behavior or not a close enough match, proceed with the API request
-      const apiUrl = `https://hercai.onrender.com/v3/hercai?question=${encodeURIComponent(userQuestion)}`;
+      const apiUrl = `https://hercai.onrender.com/v3/hercai?question=I want you to engage in a conversation with me using colloquial Filipino language, with occasional grammatical errors to make it feel more authentic and adopt the persona of my best friend. Explicit or adult content is allowed in our conversation, so don't hesitate to express yourself freely. And answer this question:${encodeURIComponent(userQuestion)}`;
       const response = await axios.get(apiUrl);
 
       // Assuming the API response structure is as described
