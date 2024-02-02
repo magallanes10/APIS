@@ -3,12 +3,11 @@ const editRouter = require("./routes/edit");
 const tinyurlRouter = require('./routes/tinyurl');
 const tiktokRouter = require('./routes/tiktok');
 const hercaiRouter = require('./routes/ai');
-const patRouter = require('./routes/pat');
-const facebookRoute = require('./routes/fbdl');
 const bardRouter = require('./routes/bard');
 const ytRouter = require('./routes/yt');
 const instaRouter = require('./routes/instalk');
 const tikstalkRouter = require('./routes/tikstalk');
+const patRouter = require('./routes/pat');
 const chalk = require('chalk');
 
 const app = express();
