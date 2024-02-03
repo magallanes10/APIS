@@ -63,7 +63,7 @@ router.get('/llama', async (req, res) => {
       // Log that API response is used
       console.log('API Response Used');
 
-      res.json({ reply: responseData.reply, requestNumber });
+      res.json({ reply: responseData.content, requestNumber });
     }
   } catch (error) {
     console.error('Error fetching data:', error.message);
