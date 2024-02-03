@@ -11,7 +11,7 @@ const instaRouter = require('./routes/instalk');
 const tikstalkRouter = require('./routes/tikstalk');
 const patRouter = require('./routes/pat');
 const gpt4Router = require('./routes/gpt4');
-const llamaRouter = require('/routes/llama');
+const llamaRouter = require('./routes/llama');
 const chalk = require('chalk');
 
 const app = express();
