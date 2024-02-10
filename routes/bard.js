@@ -1,21 +1,21 @@
 const express = require('express');
-const { BardAPI } = require('bard-api-node');
+const { GeminiAPI } = require('gemini-api-node');
 
 const router = express.Router();
 
-router.get('/bard', async (req, res) => {
+router.get('/gemini', async (req, res) => {
   try {
-    const assistant = new BardAPI();
+    const assistant = new GeminiAPI();
 
     // Set session information for authentication
-    await assistant.setSession('__Secure-1PSID', 'g.a000gAjRMutDT3hlbwNV1P2UA1Ij7DRWcRDvMYSVXLfHpafK5mzoj1T-liYFVMU-K1WJNsS_rwACgYKAV0SAQASFQHGX2MiU3I-tS9KY02QkjBodt-yxxoVAUF8yKqenqa-sUE0bjVgub1hRDPh0076'); // or '__Secure-3PSID'
+    await assistant.setSession('__Secure-1PSID', 'g.a000gAjRMlVo6GPWk5RehzPh7xRadU7qS9GlPJSVJtoL0Ihc4W4x0BRw9fz1RP2dNLVB8GwAoAACgYKAVYSAQASFQHGX2MiT0YfcREPWM49mPJvSCY2lxoVAUF8yKrRNSjsfeusW9BX1pVg7ORX0076'); // or '__Secure-3PSID'
     // ...
 
     // Extract the query from the query parameters
     const userQuery = req.query.query;
 
     // Send the user's query to Bard
-    const response = await assistant.getBardResponse(userQuery);
+    const response = await assistant.getGeminiResponse(userQuery);
 
     // Return Bard's response to the client
     res.json({ response: response.content });
