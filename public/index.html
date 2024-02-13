@@ -18,6 +18,45 @@
       color: white;
       padding: 10px;
       text-align: center;
+      position: relative;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 10px;
+      z-index: 1;
+      animation: slideDown 0.3s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .menu-item {
+      margin-bottom: 5px;
+      cursor: pointer;
+      color: #333;
     }
 
     main {
@@ -51,6 +90,11 @@
 <body>
   <header>
     <h1>JONELL CC API</h1>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-content" id="menuContent">
+      <div class="menu-item" onclick="navigate('/login')">Login</div>
+      <div class="menu-item" onclick="navigate('/commands')">Commands</div>
+    </div>
   </header>
 
   <main>
@@ -59,7 +103,6 @@
       <p>This Api link route is related geometry dash random video gameplays from TikTok video. Fire in the hole...</p>
       <p>Example usage: <a href="/gd" target="_blank">/gd</a></p>
     </div>
-
     <div class="endpoint-container">
       <h2>RANDOM EDIT VIDEO API</h2>
       <p>This Api Link route is a random video of edit like preset alightmotion and content related edits</p>
@@ -101,6 +144,30 @@
       <p>This route api to ability to stalk the profile of Instagram Users using username</p>
       <p>Example usage: <a href="/api/instagram/stalk?ig=" target="_blank">/api/instagram/stalk?ig=</a></p>
         </div>
+
+            <div class="endpoint-container">
+      <h2>FACEBOOK VIDEO DOWNLOADER API</h2>
+      <p>This route API is to ability to download video from Facebook or Facebook Reels</p>
+      <p>Example usage: <a href="/api/fbdl?url=" target="_blank">/api/fbdl?url=your url video facebook</a></p>
+            </div>
+
+            <div class="endpoint-container">
+      <h2>TIKTOK DOWNLOADER API</h2>
+      <p>This route API to ability to download the video from TikTok video with link video</p>
+      <p>Example usage: <a href="/api/tikdl?url=" target="_blank">/api/tikdl?url= your video link video from TikTok</a></p>
+        </div>
+
+                <div class="endpoint-container">
+      <h2>YOUTUBE DOWNLOADER API</h2>
+      <p>This route API to ability to download the video from Youtube video with link video</p>
+      <p>Example usage: <a href="/api/yt?url=" target="_blank">/api/yt?url= your video link video from youtube</a></p>
+                </div>
+
+                <div class="endpoint-container">
+      <h2>TWITTER DOWNLOADER API</h2>
+      <p>This route API to ability to download the video from Twitter video with link video</p>
+      <p>Example usage: <a href="/api/tikdl?url=" target="_blank">/api/twitter?url= your video link video from from Twitter</a></p>
+                </div>
     <!-- Add more endpoint containers as needed -->
 
   </main>
@@ -108,5 +175,16 @@
   <footer>
     <p>&copy; PROJECT CC JONEL MAGALLANES</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menuContent = document.getElementById('menuContent');
+      menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function navigate(path) {
+      window.location.href = path;
+    }
+  </script>
 </body>
 </html>
