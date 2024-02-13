@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/gd", async (req, res) => {
   try {
     const edits = [
       "geometry dash gameplay ",
