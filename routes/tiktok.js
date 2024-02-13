@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-router.get('/searchvideo', async (req, res, next) => {
+router.get('/tiktok/searchvideo', async (req, res, next) => {
     var search = req.query.keywords;
     if (!search) return res.status(400).json({ error: 'Missing data to launch the program' });
 
