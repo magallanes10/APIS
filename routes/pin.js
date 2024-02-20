@@ -1,10 +1,10 @@
+const express = require('express');
+const router = express.Router();
 
-exports.name = '/pin';
-
-exports.index = async (req, res, next) => {
+const pinMiddleware = (req, res, next) => {
     const request = require('request');
     const searchTitle = req.query.title;
-    const count = req.query.count || 10; // Default count to 10 if not provided
+    const count = req.query.count || 10;
 
     if (!searchTitle) return res.json({ error: 'Missing title parameter to execute the command' });
 
@@ -30,8 +30,8 @@ exports.index = async (req, res, next) => {
     function callback(error, response, body) {
         if (!error && response.statusCode == 200) {
             const arrMatch = body.match(/https:\/\/i\.pinimg\.com\/originals\/[^.]+\.jpg/g);
-            const limitedArrMatch = arrMatch.slice(0, count); // Limit the results based on the provided count
-            return res.json({
+            const limitedArrMatch = arrMatch.slice(0, count);
+            res.json({
                 count: limitedArrMatch.length,
                 data: limitedArrMatch
             });
@@ -40,3 +40,8 @@ exports.index = async (req, res, next) => {
 
     request(options, callback);
 };
+
+// Applying middleware to the /pin route
+router.use('/pin', pinMiddleware);
+
+module.exports = router;
