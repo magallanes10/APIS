@@ -6,7 +6,7 @@ const router = express.Router();
 
 let requestCount = 0;
 
-router.get('/ai', async (req, res) => {
+router.get('/globalgpt', async (req, res) => {
   try {
     const content = req.query.content;
     const apiUrl = `https://api.easy-api.online/v1/globalgpt?q=${content}`;
