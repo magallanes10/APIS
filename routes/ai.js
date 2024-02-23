@@ -3,6 +3,11 @@ const axios = require('axios');
 
 const router = express.Router();
 
+router.use((req, res, next) => {
+  console.log(`Received a request at ${new Date().toLocaleString()}`);
+  next();
+});
+
 router.get('/ai', async (req, res) => {
   try {
     const content = encodeURIComponent(req.query.content);
