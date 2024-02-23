@@ -14,7 +14,7 @@ router.get('/ai', async (req, res) => {
     const apiUrl = `https://aiapiviafastapiwithimagebyjonellmagallanes.replit.app/ai?content=${content}`;
 
     const axiosResponse = await axios.get(apiUrl);
-    const content = {
+    const query = {
       request_count: 1,
       airesponse: axiosResponse.data.airesponse,
     };
