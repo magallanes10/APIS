@@ -10,11 +10,16 @@ router.use((req, res, next) => {
 
 router.get('/ai', async (req, res) => {
   try {
-    const content = encodeURIComponent(req.query.content);
+    const content = encodeURIComponent(req.query.query || '');
+
+    if (!content) {
+      return res.status(400).json({ error: 'Query parameter is required' });
+    }
+
     const apiUrl = `https://aiapiviafastapiwithimagebyjonellmagallanes.replit.app/ai?content=${content}`;
 
     const axiosResponse = await axios.get(apiUrl);
-    const query = {
+    const responseData = {
       request_count: 1,
       airesponse: axiosResponse.data.airesponse,
     };
